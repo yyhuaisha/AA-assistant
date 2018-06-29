@@ -1,0 +1,71 @@
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #777777;
+  text-align: center;
+  line-height: 80rpx;
+}
+.swiper-tab .on {
+  color: #da7c0c;
+  border-bottom: 5rpx solid #da7c0c;
+}
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 50%;
+  color: #777777;
+}
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.form {
+  margin: 40px 10px 20px;
+  text-align: left;
+}
+.form label {
+  display: block;
+  margin: 20px auto;
+}
+.form label .tips-text {
+  display: inline-block;
+  text-align: right;
+  width: 30%;
+  height: 24px;
+  line-height: 24px;
+  max-width: 200rpx;
+  vertical-align: top;
+  margin: 8px 0;
+  word-wrap: break-word;
+}
+.form label .lab-input {
+  display: inline-block;
+  width: 60%;
+  font-size: 15px;
+  height: 22px;
+  line-height: 22px;
+  margin-left: 6px;
+  padding: 8px;
+  border: 1px solid #eee;
+  background: #f0f0f0;
+  border-radius: 4px;
+  vertical-align: top;
+}
+.form label .lab-text {
+  display: inline-block;
+  width: 60%;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 8px 0 8px 6px;
+  padding-left: 4px;
+  border-radius: 4px;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+.form label .span {
+  display: inline;
+}
+.form label .color-red {
+  color: #e40;
+}

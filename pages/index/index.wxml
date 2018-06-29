@@ -1,0 +1,71 @@
+<!--index.wxml-->
+
+<!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+
+<view class="container">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">总价</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">个人</view>
+  </view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <!-- 全部 -->
+    <swiper-item>
+      <view class="form">
+        <label>
+          <view class="tips-text">计算总价：</view>
+          <!-- <input type="text" placeholder="总价" /> -->
+          <input bindinput="bindTotalInput" bindfocus="bindTotalInput" confirm-type="next" class="lab-input" type="text" placeholder="总价计算"
+          />
+        </label>
+        <label>
+          <view class="tips-text">总价：</view>
+          <view class="lab-text">
+            {{totalInput}}
+            <text class="span" wx:if="{{total}}"> = </text>
+            <text class="color-red">{{total}}</text>
+          </view>
+        </label>
+        <label>
+          <view class="tips-text">实付款：</view>
+          <input bindinput="bindPayment" bindfocus="bindPayment" class="lab-input" type="digit" placeholder="实付款" />
+        </label>
+        <label>
+          <view class="tips-text">折扣：</view>
+          <view class="lab-text">
+            <text class="color-red">{{discount}}</text>
+          </view>
+        </label>
+      </view>
+    </swiper-item>
+    <!-- 个人 -->
+    <swiper-item>
+      <view class="form">
+        <label>
+          <label>
+            <view class="tips-text">折扣：</view>
+            <input bindinput="bindDiscount" confirm-type="next" class="lab-input" type="digit" placeholder="折扣" value="{{discount}}"
+            />
+          </label>
+          <view class="tips-text">单价：</view>
+          <!-- <input type="text" placeholder="总价" /> -->
+          <input bindinput="bindPrice" class="lab-input" type="digit" placeholder="总价" />
+        </label>
+        <label>
+          <view class="tips-text">应付：</view>
+          <view class="lab-text">
+            <text class="color-red">{{pricePay}}</text>
+          </view>
+        </label>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
